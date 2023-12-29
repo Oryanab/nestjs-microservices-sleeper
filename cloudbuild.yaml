@@ -16,6 +16,7 @@ steps:
         'push',
         'me-west1-docker.pkg.dev/nomadic-mesh-409222/reservations/production',
       ]
+
   # auth
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -30,6 +31,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       ['push', 'me-west1-docker.pkg.dev/nomadic-mesh-409222/auth/production']
+
   # notifications
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -47,6 +49,7 @@ steps:
         'push',
         'me-west1-docker.pkg.dev/nomadic-mesh-409222/notifications/production',
       ]
+
   # payments
   - name: 'gcr.io/cloud-builders/docker'
     args:
