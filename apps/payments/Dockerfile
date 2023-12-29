@@ -3,12 +3,16 @@ FROM node:alpine As development
 WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
+COPY tsconfig.json tsconfig.json
+COPY nest-cli.json nest-cli.json
 
 RUN npm install
 
-COPY . .
+COPY apps/payments apps/payments
+COPY libs libs
 
-RUN npm run build
+RUN cd apps/payments && npm install 
+RUN npm run build payments
 
 FROM node:alpine As production
 
@@ -23,4 +27,4 @@ RUN npm install --prod
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/apps/paymens/main"]
+CMD ["node", "dist/apps/payments/main"]

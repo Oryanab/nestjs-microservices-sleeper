@@ -3,12 +3,15 @@ FROM node:alpine As development
 WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
+COPY tsconfig.json ./
+COPY nest-cli.json nest-cli.json
 
 RUN npm install
 
-COPY . .
+COPY apps/reservations apps/reservations
+COPY libs libs
 
-RUN npm run build
+RUN npm run build reservations
 
 FROM node:alpine As production
 
