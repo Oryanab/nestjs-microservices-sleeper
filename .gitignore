@@ -2,6 +2,7 @@
 /dist
 **/node_modules
 .env
+/nomadic-mesh-409222-80770936220c.json
 
 # Logs
 logs
