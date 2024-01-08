@@ -15,7 +15,7 @@ spec:
         app: auth
     spec:
       containers:
-        - image: me-west1-docker.pkg.dev/nomadic-mesh-409222/auth/production
+        - image: 091247976111.dkr.ecr.us-east-1.amazonaws.com/auth:latest
           name: auth
           env:
             - name: MONGODB_URI

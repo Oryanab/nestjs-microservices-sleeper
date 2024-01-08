@@ -9,3 +9,4 @@ export * from './dto/create-charge.dto';
 export * from './dto/card.dto';
 export * from './models/user.schema';
 export * from './health/health.module';
+export * from './decorators/roles.decorator';
